@@ -21,8 +21,11 @@ namespace NuGetDemo
             Employee employee = new Employee();
             employee.Id = 1;
             employee.name="mani";
-            Console.WriteLine(JsonConvert.SerializeObject(employee));
-        
+
+            string json = JsonConvert.SerializeObject(employee);
+            Console.WriteLine(json);
+            Employee employee1 = JsonConvert.DeserializeObject<Employee>(json);
+            Console.WriteLine(employee1.Id+" "+employee1.name);
         }
     }
 }
